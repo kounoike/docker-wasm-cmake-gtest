@@ -38,8 +38,6 @@ jobs:
         # The cache folder will be placed in the build directory,
         #  so make sure it doesn't conflict with anything!
         actions-cache-folder: 'emsdk-cache'
-    - name: setup chrome
-      run: curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && dpkg -i google-chrome-stable_current_amd64.deb
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
