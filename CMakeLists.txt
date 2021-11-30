@@ -14,7 +14,12 @@ FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/refs/tags/release-1.11.0.zip
 )
-FetchContent_MakeAvailable(googletest)
+FetchContent_Declare(
+  googlebenchmark
+  GIT_REPOSITORY https://github.com/google/benchmark.git
+  GIT_TAG v1.6.0
+)
+FetchContent_MakeAvailable(googletest googlebenchmark)
 
 include(GoogleTest)
 
@@ -29,3 +34,12 @@ if(CMAKE_CROSSCOMPILING)
 endif()
 
 gtest_discover_tests(wasm_test DISCOVERY_TIMEOUT 5)
+
+# Performance benchmark
+add_executable(wasm_perf wasm_perf.cpp wasm.cpp)
+target_link_libraries(wasm_perf benchmark_main)
+if(CMAKE_CROSSCOMPILING)
+  target_link_options(wasm_perf PRIVATE "--emrun")
+  set_property(TARGET wasm_perf PROPERTY SUFFIX ".html")
+  set_property(TARGET wasm_perf PROPERTY CROSSCOMPILING_EMULATOR "./run_test.sh")
+endif()

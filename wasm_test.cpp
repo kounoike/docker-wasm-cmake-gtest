@@ -1,9 +1,5 @@
+#include "wasm.hpp"
 #include "gtest/gtest.h"
-
-extern "C" {
-int add(int a, int b);
-int sub(int a, int b);
-}
 
 TEST(WasmAdd, Test1) {
   // 1 + 2
