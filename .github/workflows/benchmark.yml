@@ -1,4 +1,4 @@
-name: C++ Example
+name: Wasm Benchmark
 on:
   push:
     branches:
