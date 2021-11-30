@@ -33,7 +33,7 @@ if(CMAKE_CROSSCOMPILING)
   set_property(TARGET wasm_test PROPERTY CROSSCOMPILING_EMULATOR "./run_test.sh")
 endif()
 
-gtest_discover_tests(wasm_test DISCOVERY_TIMEOUT 10)
+gtest_discover_tests(wasm_test DISCOVERY_TIMEOUT 20)
 
 # Performance benchmark
 add_executable(wasm_perf wasm_perf.cpp wasm.cpp)
