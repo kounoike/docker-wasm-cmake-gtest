@@ -13,7 +13,7 @@ int add(int a, int b) {
 
 EMSCRIPTEN_KEEPALIVE
 int sub(int a, int b) {
-  // Oops!
-  return a + b;
+  // Fixed!
+  return a - b;
 }
 }
