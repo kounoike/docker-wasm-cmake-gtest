@@ -2,13 +2,13 @@ cmake_minimum_required(VERSION 3.10)
 project(wasm LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+
+# Main WebAssembly wasm/js/(sample)html
 if(CMAKE_CROSSCOMPILING)
   add_executable(wasm wasm.cpp)
   set_property(TARGET wasm PROPERTY SUFFIX ".html")
 endif()
 
-# Test
-enable_testing()
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -22,6 +22,8 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest googlebenchmark)
 
+# Test
+enable_testing()
 include(GoogleTest)
 
 add_executable(wasm_test wasm_test.cpp wasm.cpp)
