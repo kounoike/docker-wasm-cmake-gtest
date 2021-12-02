@@ -9,6 +9,12 @@ if(CMAKE_CROSSCOMPILING)
   set_property(TARGET wasm PROPERTY SUFFIX ".html")
 endif()
 
+add_executable(hello hello.cpp)
+if(CMAKE_CROSSCOMPILING)
+  set_property(TARGET hello PROPERTY SUFFIX ".html")
+  target_link_options(hello PRIVATE "--emrun")
+endif()
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -20,6 +26,7 @@ FetchContent_Declare(
   GIT_REPOSITORY https://github.com/google/benchmark.git
   GIT_TAG v1.6.0
 )
+set(BENCHMARK_ENABLE_TESTING OFF)
 FetchContent_MakeAvailable(googletest googlebenchmark)
 
 # Test
@@ -44,5 +51,4 @@ target_link_libraries(wasm_perf benchmark_main)
 if(CMAKE_CROSSCOMPILING)
   target_link_options(wasm_perf PRIVATE "--emrun")
   set_property(TARGET wasm_perf PROPERTY SUFFIX ".html")
-  set_property(TARGET wasm_perf PROPERTY CROSSCOMPILING_EMULATOR "./run_test.sh")
 endif()

@@ -15,6 +15,7 @@ for pid in $(pidof google-chrome-stable); do kill $pid; done
 # Firefoxは多重起動できないので実行前にも掃除しておく
 # for pid in $(pidof firefox); do kill $pid; done
 # emrun --browser firefox --browser_args="--headless" ${HTML} -- "$@"
+# RESULT=$?
 # for pid in $(pidof firefox); do kill $pid; done
 
 exit $RESULT
