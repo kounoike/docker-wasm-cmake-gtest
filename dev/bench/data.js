@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1638478860269,
+  "lastUpdate": 1638485558471,
   "repoUrl": "https://github.com/kounoike/docker-wasm-cmake-gtest",
   "entries": {
     "C++ Benchmark": [
@@ -216,6 +216,42 @@ window.BENCHMARK_DATA = {
             "value": 0.33566000000000007,
             "unit": "ns/iter",
             "extra": "iterations: 1000000000\ncpu: 0.33566499999999366 ns\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "kounoike.yuusuke@gmail.com",
+            "name": "KOUNOIKE Yuusuke",
+            "username": "kounoike"
+          },
+          "committer": {
+            "email": "kounoike.yuusuke@gmail.com",
+            "name": "KOUNOIKE Yuusuke",
+            "username": "kounoike"
+          },
+          "distinct": true,
+          "id": "0d08bacd8b933f4c8e437f7087982ce4fdfe1f44",
+          "message": "update",
+          "timestamp": "2021-12-02T22:28:46Z",
+          "tree_id": "39537a4866200b45cdb07bab46e49af34734e31f",
+          "url": "https://github.com/kounoike/docker-wasm-cmake-gtest/commit/0d08bacd8b933f4c8e437f7087982ce4fdfe1f44"
+        },
+        "date": 1638485558070,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "BM_Add",
+            "value": 0.3931849999999999,
+            "unit": "ns/iter",
+            "extra": "iterations: 1000000000\ncpu: 0.39319500000000707 ns\nthreads: 1"
+          },
+          {
+            "name": "BM_Sub",
+            "value": 0.3942300000000001,
+            "unit": "ns/iter",
+            "extra": "iterations: 1000000000\ncpu: 0.39423499999998585 ns\nthreads: 1"
           }
         ]
       }
